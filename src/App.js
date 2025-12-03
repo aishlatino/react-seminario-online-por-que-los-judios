@@ -722,7 +722,23 @@ const DynamicText = ({ item, index }) => {
             );
     }
 };
-
+// --- COMPONENTE DE ENCUESTA (TYPEFORM) ---
+const EncuestaTypeform = () => (
+    <div className="my-12 w-full max-w-2xl mx-auto">
+        <h3 className="font-heading text-2xl mb-4 uppercase text-center">Tu opinión importa</h3>
+        <div className="w-full bg-white border-4 border-black spangler-shadow relative overflow-hidden" style={{ height: '600px' }}>
+            <iframe
+                id="typeform-full"
+                title="Encuesta Seminario"
+                width="100%"
+                height="100%"
+                src="https://aishplus.typeform.com/to/Dn79DHZx"
+                allow="camera; microphone; autoplay; encrypted-media;"
+                style={{ border: 'none' }}
+            ></iframe>
+        </div>
+    </div>
+);
 // --- SECCIONES ---
 
 const Section = ({ data, isLocked, onUnlock, sectionRef, nextSectionUnlocked }) => {
@@ -795,6 +811,8 @@ const Section = ({ data, isLocked, onUnlock, sectionRef, nextSectionUnlocked }) 
 
                     {!onUnlock && quizPassed && (
                         <div className="mt-24 text-center p-8 border-t-4 border-black bg-gray-50">
+                            {/* --- ENCUESTA FINAL (Solo en la parte 6) --- */}
+{data.id === 6 && <EncuestaTypeform />}
                             <p className="font-heading text-[24px] md:text-[30px] mb-4">¡Tu viaje apenas comienza!</p>
                             <p className="font-body text-[22px] md:text-[26px] mb-6">Sigue descubriendo la profundidad de la sabiduría judía.</p>
                             <a href="https://aishlatino.com" target="_blank" rel="noreferrer" className="group relative inline-block w-full md:w-auto">
