@@ -792,23 +792,7 @@ const Section = ({ data, isLocked, onUnlock, sectionRef, nextSectionUnlocked }) 
                             </button>
                         </div>
                     )}
-// --- COMPONENTE DE ENCUESTA (TYPEFORM) ---
-const EncuestaTypeform = () => (
-    <div className="my-12 w-full max-w-2xl mx-auto">
-        <h3 className="font-heading text-2xl mb-4 uppercase text-center">Tu opinión importa</h3>
-        <div className="w-full h-[500px] bg-white border-4 border-black spangler-shadow relative overflow-hidden">
-            <iframe
-                id="typeform-full"
-                title="Encuesta Seminario"
-                width="100%"
-                height="100%"
-                src="https://aishplus.typeform.com/to/Dn79DHZx"
-                allow="camera; microphone; autoplay; encrypted-media;"
-                style={{ border: 'none' }}
-            ></iframe>
-        </div>
-    </div>
-);
+
                     {!onUnlock && quizPassed && (
                         <div className="mt-24 text-center p-8 border-t-4 border-black bg-gray-50">
                             <p className="font-heading text-[24px] md:text-[30px] mb-4">¡Tu viaje apenas comienza!</p>
