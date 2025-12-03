@@ -206,7 +206,7 @@ const contentData = [
                 "La sociedad gentil era el entorno social de su elección, y Alemania su amada madre patria."
             ]},
 
-            { type: "big-question", content: "¿DESAPARECIÓ EL ANTISEMITISMO?" },
+            { type: "highlight", content: "¿DESAPARECIÓ EL ANTISEMITISMO?" },
             { type: "body", content: "Todos conocemos la trágica respuesta a esta pregunta. Los judíos en Alemania y Austria sufrieron la proliferación de antisemitismo más empedernida de toda la historia. Precisamente cuando los judíos rechazaron el hecho de \"haber sido elegidos\" es que sufrieron las formas más violentas de antisemitismo." },
             { type: "note", content: "Claramente, la Teoría del Pueblo Elegido no pasa el Test de Litmus." },
             { type: "heading", content: "Otros pueblos 'elegidos'" },
@@ -850,9 +850,7 @@ const Hero = ({ onStart }) => {
                 </div>
             </div>
             
-            <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <ChevronDown className="w-10 h-10 md:w-12 md:h-12" />
-            </div>
+        
         </div>
     );
 };
