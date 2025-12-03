@@ -363,7 +363,7 @@ const contentData = [
                 "Ana Frank aclaró el punto de que los judíos tienen algo especialmente valioso para darle al mundo, y eso es precisamente lo que el mundo ha resentido al perseguir a los judíos. Ana Frank identificó el antisemitismo como un odio del judaísmo, un odio completamente diferente a la intolerancia o el racismo que otros pueblos sufren.."
             ]},
             { type: "body", content: "Sorprendentemente, cuando la historia de Ana Frank fue reconstruida por Lillian Hellman en una obra de teatro, sus palabras fueron cambiadas por completo. '¿Por qué son odiados los judíos?' pregunta Ana. 'Bueno, un día es un grupo, y al día siguiente otro…'" },
-            { type: "body", content: "En el teatro se le hizo creer a las audiencias que los judíos han sido odiados de la misma manera en que otros pueblos han sido odiados. En otras palabras, no hay nada judío en el antisemitismo.             " },
+            { type: "body", content: "En el teatro se le hizo creer a las audiencias que los judíos han sido odiados de la misma manera en que otros pueblos han sido odiados. En otras palabras, no hay nada judío en el antisemitismo.              " },
             { type: "body", content: "¿Pero qué dicen los antisemitas mismos sobre este tema?" },
 
             { type: "heading", content: "El honesto enfoque de Hitler" },
@@ -462,7 +462,7 @@ const contentData = [
             { type: "body", content: "En Ancient and Medieval History (Historia Antigua y Medieval), Hayes y Moon escriben:" },
             { type: "quote", content: "Sólo si sabes algo sobre los sacrificios humanos, los depravados rituales del templo, las degradantes supersticiones y costumbres que fueron practicadas… puedes darte cuenta cuánto el mundo moderno le debe a los profetas hebreos, cuyo monoteísmo y enseñanzas morales se metieron en el cristianismo y el islamismo…" },
 
-            { type: "body", content: "T. R. Glover resaltó esta misma idea en su libro, El Mundo Antiguo:            " },
+            { type: "body", content: "T. R. Glover resaltó esta misma idea en su libro, El Mundo Antiguo:             " },
             { type: "quote", content: "La humanidad - occidental y oriental, cristianos y musulmanes - aceptaron la creencia judía de que hay un solo Dios. Hoy en día el politeísmo es tan difícil de entender que es impensable." },
             { type: "body", content: "La moral y los ideales judíos han ganado una aceptación casi universal. Y con eso, han generado una violenta resistencia al mensaje judío." },
             
@@ -503,17 +503,6 @@ const contentData = [
             { type: "body", content: "La respuesta a esta pregunta es crítica para ti, para el pueblo judío, y finalmente, para el mundo. Cuando los judíos deben vivir en una sociedad antisemita, dentro del contexto de un pasado lleno de antisemitismo, deben tener un fuerte sentido íntimo de por qué ser judío es significativo y valedero; y de por qué vale la pena el esfuerzo." },
             { type: "body", content: "¿Cuál es la mejor forma de obtener una percepción positiva y optimista sobre ser judío?" },
 
-
-
-
-
-
-
-
-
-            
-            
-            
             { type: "stamp", content: "La respuesta es obvia: con educación judía." },
         ],
         quiz: [
@@ -723,6 +712,24 @@ const DynamicText = ({ item, index }) => {
     }
 };
 
+// --- COMPONENTE DE ENCUESTA (TYPEFORM) ---
+const EncuestaTypeform = () => (
+    <div className="my-12 w-full max-w-2xl mx-auto">
+        <h3 className="font-heading text-2xl mb-4 uppercase text-center">Tu opinión importa</h3>
+        <div className="w-full h-[500px] bg-white border-4 border-black spangler-shadow relative overflow-hidden">
+            <iframe
+                id="typeform-full"
+                title="Encuesta Seminario"
+                width="100%"
+                height="100%"
+                src="https://aishplus.typeform.com/to/Dn79DHZx"
+                allow="camera; microphone; autoplay; encrypted-media;"
+                style={{ border: 'none' }}
+            ></iframe>
+        </div>
+    </div>
+);
+
 // --- SECCIONES ---
 
 const Section = ({ data, isLocked, onUnlock, sectionRef, nextSectionUnlocked }) => {
@@ -795,7 +802,11 @@ const Section = ({ data, isLocked, onUnlock, sectionRef, nextSectionUnlocked }) 
 
                     {!onUnlock && quizPassed && (
                         <div className="mt-24 text-center p-8 border-t-4 border-black bg-gray-50">
-                            <p className="font-heading text-[24px] md:text-[30px] mb-4">¡Tu viaje apenas comienza!</p>
+                            <p className="font-heading text-[24px] md:text-[30px] mb-4">¡Tu viaje ha finalizado!</p>
+                            
+                            {/* --- ENCUESTA FINAL --- */}
+                            {data.id === 6 && <EncuestaTypeform />}
+                            
                             <p className="font-body text-[22px] md:text-[26px] mb-6">Sigue descubriendo la profundidad de la sabiduría judía.</p>
                             <a href="https://aishlatino.com" target="_blank" rel="noreferrer" className="group relative inline-block w-full md:w-auto">
                                 <div className="relative border-2 border-black bg-pop-yellow px-8 py-4 font-heading text-xl hover:bg-black hover:text-white transition-colors uppercase tracking-widest">
